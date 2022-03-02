@@ -1,9 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/layout/NavBar';
+import WelcomePage from './views/WelcomePage';
+import RankingPage from './views/RankingPage';
 
 function App() {
-  return <div className='App'></div>;
+  return (
+    <>
+      <NavBar />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<WelcomePage />} />
+          <Route path='/ranking' element={<RankingPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
