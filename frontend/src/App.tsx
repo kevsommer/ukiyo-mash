@@ -4,6 +4,7 @@ import NavBar from './components/layout/NavBar';
 import WelcomePage from './views/WelcomePage';
 import RankingPage from './views/RankingPage';
 import theme from './utils/theme';
+import ComparisonPage from './views/ComparisonPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route index element={<WelcomePage />} />
           <Route path='/ranking' element={<RankingPage />} />
+          <Route path='/compare' element={<ComparisonPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
