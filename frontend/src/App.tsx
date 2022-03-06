@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route index element={<WelcomePage />} />
           <Route path='/ranking' element={<RankingPage />} />
-          <Route path='/compare' element={<ComparisonPage />} />
+          <Route path='/mash' element={<ComparisonPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
