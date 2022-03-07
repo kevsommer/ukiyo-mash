@@ -26,3 +26,4 @@ yarn-error.log*
 */env/*
 *.csv
 *__pycache__/
+*.db
