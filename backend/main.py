@@ -24,6 +24,11 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     items = crud.get_items(db, skip=skip, limit=limit)
     return items
 
+@app.get("/items/random", response_model=List[schemas.Item])
+def random_items(db: Session = Depends(get_db)):
+    items = crud.get_random_items(db)
+    return items
+
 @app.get("/items/{item_id}", response_model=schemas.Item)
 def read_item(item_id: int, db: Session = Depends(get_db)):
     db_item = crud.get_item(db, item_id=item_id)
