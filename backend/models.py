@@ -12,4 +12,6 @@ class Item(Base):
     object_end_date = Column(Integer)
     object_url = Column(String)
     object_img = Column(String)
+    object_img_small = Column(String)
+    medium = Column(String)
     elo = Column(Integer)

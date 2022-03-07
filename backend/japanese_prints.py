@@ -9,8 +9,8 @@ r = requests.get(baseApiUrl + 'search', params={'q': 'ukiyo'})
 ukiyo_objects = r.json()['objectIDs']
 
 
-artwork_keys = ['objectID', 'title', 'isPublicDomain', 'primaryImage', 'objectURL', 'artistAlphaSort', 
-    'artistBeginDate', 'artistEndDate', 'objectBeginDate', 'objectEndDate']
+artwork_keys = ['objectID', 'title', 'isPublicDomain', 'primaryImage', 'primaryImageSmall', 'medium', 'objectURL', 'artistAlphaSort', 
+    'objectBeginDate', 'objectEndDate']
 
 rows = []
 
@@ -19,6 +19,9 @@ print('DOWNLOADING')
 for idx, objID in enumerate(tqdm(ukiyo_objects)): 
     r = requests.get(baseApiUrl + 'objects/' + str(objID))
     res = r.json()
+
+    if 'message' in res.keys():
+        continue
     rows.append({ k: res[k] for k in artwork_keys})
 
 ukiyo_df = pd.DataFrame(rows)

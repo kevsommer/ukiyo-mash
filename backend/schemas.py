@@ -10,6 +10,8 @@ class ItemBase(BaseModel):
     object_end_date: int
     object_url: str
     object_img: str
+    object_img_small: str
+    medium: str
     elo: int
 
 
