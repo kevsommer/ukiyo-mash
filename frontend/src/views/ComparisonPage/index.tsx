@@ -22,6 +22,7 @@ const HorizontalContainer = styled(Container)`
 const baseURL = 'http://localhost:8000';
 
 interface Artwork {
+  id: number;
   object_img_small: string;
   artist_name: string;
   title: string;
@@ -37,22 +38,35 @@ const ComparisonPage = () => {
     undefined
   );
 
+  const [reload, setReload] = useState<boolean>(true);
+
   useEffect(() => {
-    axios.get(`${baseURL}/items/random`).then((res) => {
-      setLeftArtwork(res.data[0]);
-      setRightArtwork(res.data[1]);
+    if (reload) {
+      axios.get(`${baseURL}/items/random`).then((res) => {
+        setLeftArtwork(res.data[0]);
+        setRightArtwork(res.data[1]);
+      });
+      setReload(false);
+    }
+  }, [reload]);
+
+  const voteArtwork = (id: number): void => {
+    axios.post(`${baseURL}/items/vote`, { id: id }).then((res) => {
+      if (res.status === 200) {
+        setReload(true);
+      }
     });
-  }, []);
+  };
 
   return (
     <HorizontalContainer maxWidth='md'>
       <Paper elevation={3} style={{ width: '45%', height: '25vh' }}>
         <ContainedImage src={leftArtwork?.object_img_small} alt='Loading...' />
-        <BasicCard {...leftArtwork} />
+        <BasicCard {...leftArtwork} onVoteClick={voteArtwork} />
       </Paper>
       <Paper elevation={3} style={{ width: '45%', height: '25vh' }}>
         <ContainedImage src={rightArtwork?.object_img_small} alt='Loading...' />
-        <BasicCard {...rightArtwork} />
+        <BasicCard {...rightArtwork} onVoteClick={voteArtwork} />
       </Paper>
     </HorizontalContainer>
   );

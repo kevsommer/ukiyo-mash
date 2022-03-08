@@ -7,17 +7,21 @@ import {
 } from '@mui/material';
 
 interface Props {
+  id?: number;
   artist_name?: string;
   title?: string;
   object_begin_date?: number;
   object_end_date?: number;
+  onVoteClick(id: number): void;
 }
 
 const BasicCard = ({
+  id,
   artist_name,
   title,
   object_begin_date,
   object_end_date,
+  onVoteClick,
 }: Props) => {
   return (
     <Card sx={{ minWidth: 275, height: '25vh' }}>
@@ -34,7 +38,14 @@ const BasicCard = ({
       </CardContent>
       <CardActions style={{ marginTop: 'auto' }}>
         <Button size='small'>Learn More</Button>
-        <Button size='small'>Vote</Button>
+        <Button
+          size='small'
+          onClick={() => {
+            if (id !== undefined) onVoteClick(id);
+          }}
+        >
+          Vote
+        </Button>
       </CardActions>
     </Card>
   );
