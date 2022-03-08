@@ -6,6 +6,7 @@ import BasicCard from '../../components/layout/BasicCard';
 
 const ContainedImage = styled('img')`
   height: 25vh;
+  width: 20vw;
   object-fit: scale-down;
   display: flex;
   margin: 0 auto;
@@ -20,9 +21,19 @@ const HorizontalContainer = styled(Container)`
 
 const baseURL = 'http://localhost:8000';
 
+interface Artwork {
+  object_img_small: string;
+  artist_name: string;
+  title: string;
+}
+
 const ComparisonPage = () => {
-  const [leftArtwork, setLeftArtwork] = useState({ object_img: '' });
-  const [rightArtwork, setRightArtwork] = useState({ object_img: '' });
+  const [leftArtwork, setLeftArtwork] = useState<Artwork | undefined>(
+    undefined
+  );
+  const [rightArtwork, setRightArtwork] = useState<Artwork | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     axios.get(`${baseURL}/items/random`).then((res) => {
@@ -33,13 +44,19 @@ const ComparisonPage = () => {
 
   return (
     <HorizontalContainer maxWidth='md'>
-      <Paper elevation={3} style={{ width: '45%' }}>
-        <ContainedImage src={leftArtwork?.object_img} alt='image' />
-        <BasicCard />
+      <Paper elevation={3} style={{ width: '45%', height: '25vh' }}>
+        <ContainedImage src={leftArtwork?.object_img_small} alt='Loading...' />
+        <BasicCard
+          author={leftArtwork?.artist_name}
+          title={leftArtwork?.title}
+        />
       </Paper>
       <Paper elevation={3} style={{ width: '45%' }}>
-        <ContainedImage src={rightArtwork?.object_img} alt='image' />
-        <BasicCard />
+        <ContainedImage src={rightArtwork?.object_img_small} alt='Loading...' />
+        <BasicCard
+          author={rightArtwork?.artist_name}
+          title={rightArtwork?.title}
+        />
       </Paper>
     </HorizontalContainer>
   );

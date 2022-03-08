@@ -6,30 +6,28 @@ import {
   Typography,
 } from '@mui/material';
 
-const BasicCard = () => {
+interface Props {
+  author?: string;
+  title?: string;
+}
+
+const BasicCard = ({ author, title }: Props) => {
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
+    <Card sx={{ minWidth: 275, height: '25vh' }}>
+      <CardContent sx={{ height: '65%' }}>
         <Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
-          Katsushika Hokusai
+          {author}
         </Typography>
-        <Typography variant='h5' component='div'>
-          Under the Wave off Kanagawa
+        <Typography sx={{ fontSize: 18 }} component='div'>
+          {title}
         </Typography>
         <Typography sx={{ mb: 1 }} color='text.secondary'>
           ca. 1830–32
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color='text.secondary'>
-          Edo period (1615–1868)
-        </Typography>
-        <Typography variant='body2'>
-          Under the Wave off Kanagawa (Kanagawa oki nami ura), also known as The
-          Great Wave, from the series Thirty-six Views of Mount Fuji (Fugaku
-          sanjūrokkei)
-        </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions style={{ marginTop: 'auto' }}>
         <Button size='small'>Learn More</Button>
+        <Button size='small'>Vote</Button>
       </CardActions>
     </Card>
   );
