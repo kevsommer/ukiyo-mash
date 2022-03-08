@@ -25,6 +25,8 @@ interface Artwork {
   object_img_small: string;
   artist_name: string;
   title: string;
+  object_begin_date: number;
+  object_end_date: number;
 }
 
 const ComparisonPage = () => {
@@ -46,17 +48,11 @@ const ComparisonPage = () => {
     <HorizontalContainer maxWidth='md'>
       <Paper elevation={3} style={{ width: '45%', height: '25vh' }}>
         <ContainedImage src={leftArtwork?.object_img_small} alt='Loading...' />
-        <BasicCard
-          author={leftArtwork?.artist_name}
-          title={leftArtwork?.title}
-        />
+        <BasicCard {...leftArtwork} />
       </Paper>
-      <Paper elevation={3} style={{ width: '45%' }}>
+      <Paper elevation={3} style={{ width: '45%', height: '25vh' }}>
         <ContainedImage src={rightArtwork?.object_img_small} alt='Loading...' />
-        <BasicCard
-          author={rightArtwork?.artist_name}
-          title={rightArtwork?.title}
-        />
+        <BasicCard {...rightArtwork} />
       </Paper>
     </HorizontalContainer>
   );
