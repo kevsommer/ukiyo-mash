@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 import crud, models, schemas
 from database import SessionLocal, engine
+from utils import expected_score, new_score
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -51,3 +52,25 @@ def read_item(item_id: int, db: Session = Depends(get_db)):
     if db_item is None:
         raise HTTPException(status_code=404, detail="Item not found")
     return db_item
+
+@app.patch("/items/vote/{winner_id}/{loser_id}")
+async def update_elo(winner_id: int, loser_id: int, db: Session = Depends(get_db)):
+    winner_item = crud.get_item(db, item_id=winner_id)
+    if winner_item is None:
+        raise HTTPException(status_code=404, detail="Items not found")
+    
+    loser_item = crud.get_item(db, item_id=loser_id)
+    if loser_item is None:
+        raise HTTPException(status_code=404, detail="Items not found")
+    
+    E_A = expected_score(winner_item.elo, loser_item.elo)
+    E_B = expected_score(loser_item.elo, winner_item.elo)
+
+
+    winner_new_elo = new_score(winner_item.elo, 1, E_A)
+    loser_new_elo = new_score(loser_item.elo, 0, E_B)
+
+    crud.update_elo(db, winner_item.id, winner_new_elo)
+    crud.update_elo(db, loser_item.id, loser_new_elo)
+
+    return
