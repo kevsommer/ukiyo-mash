@@ -51,11 +51,25 @@ const ComparisonPage = () => {
   }, [reload]);
 
   const voteArtwork = (id: number): void => {
-    axios.post(`${baseURL}/items/vote`, { id: id }).then((res) => {
-      if (res.status === 200) {
-        setReload(true);
-      }
-    });
+    if (leftArtwork?.id === id) {
+      axios
+        .patch(`${baseURL}/items/vote/${id}/${rightArtwork?.id}`)
+        .then((res) => {
+          if (res.status === 200) {
+            setReload(true);
+            console.log(res.data);
+          }
+        });
+    } else {
+      axios
+        .patch(`${baseURL}/items/vote/${leftArtwork?.id}/${id}`)
+        .then((res) => {
+          if (res.status === 200) {
+            setReload(true);
+            console.log(res.data);
+          }
+        });
+    }
   };
 
   return (
