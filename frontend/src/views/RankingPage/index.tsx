@@ -21,7 +21,7 @@ const RankingPage = () => {
 
   return (
     <div style={{ height: '80vh', width: '40%', margin: '3em auto 0 auto' }}>
-      <DataGrid pageSize={20} rows={rows} columns={columns} />
+      <DataGrid pageSize={100} rows={rows} columns={columns} />
     </div>
   );
 };

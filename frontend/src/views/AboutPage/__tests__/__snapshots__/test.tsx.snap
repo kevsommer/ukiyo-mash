@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthMd css-itogja-MuiContainer-root"
+      >
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-3iqr3i-MuiTypography-root"
+        >
+          What is Ukiyo Mash?
+        </h4>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+        >
+          Ukiyo Mash is a little project inspired by the FaceMash application from the movie "The Social Network", because I always thought that elo ranking is an interesting concept.
+        </p>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-149xwtl-MuiTypography-root"
+        >
+          Elo Ranking
+        </h4>
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-130eojk-MuiTypography-root"
+        >
+          The elo rating system has its roots in chess. It was originally devised by Arpad Elo, a Hungarian-American physics professor. The method itself is very simple and can be described in only a few formulas.
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+        >
+          First the algorithm computes the expected score of a player A: E_A, which dependes on the scores of both players R_B and R_A. And analogously the expected score for E_B
+        </p>
+        <img
+          alt="Elo Expected Score Formula"
+          src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7c80282e9c95e92d6b210467aab48a8c4c81ef10"
+        />
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+        >
+          Afterwards the update is computed
+        </p>
+        <img
+          alt="Elo Update Formula"
+          src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1cad9fb1cfc6a8e845493ac9a40eb98541a4641a"
+        />
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-e37s4-MuiTypography-root"
+        >
+          Ukiyo-e
+        </h4>
+        <img
+          alt="test"
+          class="css-104w4nu"
+          src="https://images.metmuseum.org/CRDImages/as/web-large/DP122173.jpg"
+          style="width: 40vw; height: 40vh;"
+        />
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+        >
+          Ukiyo-e is japanese for "pictures of the floating world". It is a popular genre of Japanese art, in which artists usually woodblock prints of natural scenes, daily life and famous people. In contrast to most art at the time, it could be reproduced hundreds or even thousands of times and was relatively affordable.
+        </p>
+        <img
+          alt="test"
+          class="css-104w4nu"
+          src="https://images.metmuseum.org/CRDImages/as/web-large/DP141240.jpg"
+          style="width: 40vw; height: 40vh;"
+        />
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+        >
+          To me this is what sets style apart from conventional art. Art should be accessible to all and the uniqueness of an artwork should not determine its worth. While I can appreciate European art as well, I do think it's less accessible. Artworks should be something that one can appreciate without having an art degree.
+        </p>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-e37s4-MuiTypography-root"
+        >
+          Implementation
+        </h4>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+        >
+          Since this is only a small side project, the implementation is very light-weight as well. The frontend uses React and utilises material-ui. While the backend is built using FastAPI, which is Python-based light-weight backend framework. It is heavily inspired by flask, but is more modern and has a great documentation. The database is built using sqllite3 and is handled using the sqlalchemy library. You can view the project code on github and deploy it very quickly yourself using Docker.
+        </p>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthMd css-itogja-MuiContainer-root"
+    >
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-3iqr3i-MuiTypography-root"
+      >
+        What is Ukiyo Mash?
+      </h4>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+      >
+        Ukiyo Mash is a little project inspired by the FaceMash application from the movie "The Social Network", because I always thought that elo ranking is an interesting concept.
+      </p>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-149xwtl-MuiTypography-root"
+      >
+        Elo Ranking
+      </h4>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-130eojk-MuiTypography-root"
+      >
+        The elo rating system has its roots in chess. It was originally devised by Arpad Elo, a Hungarian-American physics professor. The method itself is very simple and can be described in only a few formulas.
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+      >
+        First the algorithm computes the expected score of a player A: E_A, which dependes on the scores of both players R_B and R_A. And analogously the expected score for E_B
+      </p>
+      <img
+        alt="Elo Expected Score Formula"
+        src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7c80282e9c95e92d6b210467aab48a8c4c81ef10"
+      />
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+      >
+        Afterwards the update is computed
+      </p>
+      <img
+        alt="Elo Update Formula"
+        src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1cad9fb1cfc6a8e845493ac9a40eb98541a4641a"
+      />
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-e37s4-MuiTypography-root"
+      >
+        Ukiyo-e
+      </h4>
+      <img
+        alt="test"
+        class="css-104w4nu"
+        src="https://images.metmuseum.org/CRDImages/as/web-large/DP122173.jpg"
+        style="width: 40vw; height: 40vh;"
+      />
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+      >
+        Ukiyo-e is japanese for "pictures of the floating world". It is a popular genre of Japanese art, in which artists usually woodblock prints of natural scenes, daily life and famous people. In contrast to most art at the time, it could be reproduced hundreds or even thousands of times and was relatively affordable.
+      </p>
+      <img
+        alt="test"
+        class="css-104w4nu"
+        src="https://images.metmuseum.org/CRDImages/as/web-large/DP141240.jpg"
+        style="width: 40vw; height: 40vh;"
+      />
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+      >
+        To me this is what sets style apart from conventional art. Art should be accessible to all and the uniqueness of an artwork should not determine its worth. While I can appreciate European art as well, I do think it's less accessible. Artworks should be something that one can appreciate without having an art degree.
+      </p>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-e37s4-MuiTypography-root"
+      >
+        Implementation
+      </h4>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-nb090t-MuiTypography-root"
+      >
+        Since this is only a small side project, the implementation is very light-weight as well. The frontend uses React and utilises material-ui. While the backend is built using FastAPI, which is Python-based light-weight backend framework. It is heavily inspired by flask, but is more modern and has a great documentation. The database is built using sqllite3 and is handled using the sqlalchemy library. You can view the project code on github and deploy it very quickly yourself using Docker.
+      </p>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
