@@ -20,13 +20,8 @@ const RankingPage = () => {
   }, []);
 
   return (
-    <div style={{ height: 600, width: '40%', margin: '3em auto 0 auto' }}>
-      <DataGrid
-        pageSize={10}
-        rowsPerPageOptions={[10]}
-        rows={rows}
-        columns={columns}
-      />
+    <div style={{ height: '80vh', width: '40%', margin: '3em auto 0 auto' }}>
+      <DataGrid pageSize={20} rows={rows} columns={columns} />
     </div>
   );
 };
