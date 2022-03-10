@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import NavBar from './components/layout/NavBar';
+import theme from './utils/theme';
 import WelcomePage from './views/WelcomePage';
 import RankingPage from './views/RankingPage';
-import theme from './utils/theme';
 import ComparisonPage from './views/ComparisonPage';
+import AboutPage from './views/AboutPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<WelcomePage />} />
           <Route path='/ranking' element={<RankingPage />} />
           <Route path='/mash' element={<ComparisonPage />} />
+          <Route path='/about' element={<AboutPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

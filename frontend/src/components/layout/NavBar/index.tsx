@@ -12,7 +12,13 @@ const pages = ['ranking', 'mash', 'about'];
 const NavBar = () => (
   <AppBar position='static'>
     <Toolbar>
-      <IconButton size='large' edge='start' color='inherit' aria-label='menu'>
+      <IconButton
+        href='/'
+        size='large'
+        edge='start'
+        color='inherit'
+        aria-label='menu'
+      >
         浮世絵
         <Typography variant='h5' component='div' sx={{ mx: '1vw' }}>
           Ukiyo Mash
