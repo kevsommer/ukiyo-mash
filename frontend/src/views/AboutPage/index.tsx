@@ -1,5 +1,12 @@
 import { Container, Typography } from '@mui/material';
 import ContainedImage from '../../components/layout/ContainedImage';
+import styled from '@emotion/styled';
+
+const StyledImage = styled('img')`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const AboutPage = () => (
   <Container maxWidth='md' sx={{ maxHeight: '90vh', overflow: 'auto' }}>
@@ -24,21 +31,20 @@ const AboutPage = () => (
       dependes on the scores of both players R_B and R_A. And analogously the
       expected score for E_B
     </Typography>
-    <img
+    <StyledImage
       src='https://wikimedia.org/api/rest_v1/media/math/render/svg/7c80282e9c95e92d6b210467aab48a8c4c81ef10'
       alt='Elo Expected Score Formula'
     />
     <Typography sx={{ my: '1em', fontSize: '18px' }}>
       Afterwards the update is computed
     </Typography>
-    <img
+    <StyledImage
       src='https://wikimedia.org/api/rest_v1/media/math/render/svg/1cad9fb1cfc6a8e845493ac9a40eb98541a4641a'
       alt='Elo Update Formula'
     />
     <Typography sx={{ my: '0.5em', textAlign: 'center' }} variant='h4'>
       Ukiyo-e
     </Typography>
-
     <ContainedImage
       style={{ width: '40vw', height: '40vh' }}
       src='https://images.metmuseum.org/CRDImages/as/web-large/DP122173.jpg'
