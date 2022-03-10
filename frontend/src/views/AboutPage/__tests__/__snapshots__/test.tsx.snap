@@ -35,6 +35,7 @@ Object {
         </p>
         <img
           alt="Elo Expected Score Formula"
+          class="css-hnu22s"
           src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7c80282e9c95e92d6b210467aab48a8c4c81ef10"
         />
         <p
@@ -44,6 +45,7 @@ Object {
         </p>
         <img
           alt="Elo Update Formula"
+          class="css-hnu22s"
           src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1cad9fb1cfc6a8e845493ac9a40eb98541a4641a"
         />
         <h4
@@ -117,6 +119,7 @@ Object {
       </p>
       <img
         alt="Elo Expected Score Formula"
+        class="css-hnu22s"
         src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7c80282e9c95e92d6b210467aab48a8c4c81ef10"
       />
       <p
@@ -126,6 +129,7 @@ Object {
       </p>
       <img
         alt="Elo Update Formula"
+        class="css-hnu22s"
         src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1cad9fb1cfc6a8e845493ac9a40eb98541a4641a"
       />
       <h4
