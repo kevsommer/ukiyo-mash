@@ -3,14 +3,7 @@ import axios from 'axios';
 import styled from '@emotion/styled';
 import { Container, Paper } from '@mui/material';
 import BasicCard from '../../components/layout/BasicCard';
-
-const ContainedImage = styled('img')`
-  height: 25vh;
-  width: 20vw;
-  object-fit: scale-down;
-  display: flex;
-  margin: 0 auto;
-`;
+import ContainedImage from '../../components/layout/ContainedImage';
 
 const HorizontalContainer = styled(Container)`
   display: flex;
@@ -56,6 +49,8 @@ const ComparisonPage = () => {
         .patch(`${baseURL}/items/vote/${id}/${rightArtwork?.id}`)
         .then((res) => {
           if (res.status === 200) {
+            setLeftArtwork(undefined);
+            setRightArtwork(undefined);
             setReload(true);
             console.log(res.data);
           }
@@ -65,6 +60,8 @@ const ComparisonPage = () => {
         .patch(`${baseURL}/items/vote/${leftArtwork?.id}/${id}`)
         .then((res) => {
           if (res.status === 200) {
+            setLeftArtwork(undefined);
+            setRightArtwork(undefined);
             setReload(true);
             console.log(res.data);
           }
@@ -73,12 +70,12 @@ const ComparisonPage = () => {
   };
 
   return (
-    <HorizontalContainer maxWidth='md'>
-      <Paper elevation={3} style={{ width: '45%', height: '25vh' }}>
-        <ContainedImage src={leftArtwork?.object_img_small} alt='Loading...' />
+    <HorizontalContainer maxWidth='lg'>
+      <Paper elevation={3} style={{ width: '45%', height: '50vh' }}>
+        <ContainedImage src={leftArtwork?.object_img_small} alt='...' />
         <BasicCard {...leftArtwork} onVoteClick={voteArtwork} />
       </Paper>
-      <Paper elevation={3} style={{ width: '45%', height: '25vh' }}>
+      <Paper elevation={3} style={{ width: '45%', height: '50vh' }}>
         <ContainedImage src={rightArtwork?.object_img_small} alt='Loading...' />
         <BasicCard {...rightArtwork} onVoteClick={voteArtwork} />
       </Paper>
