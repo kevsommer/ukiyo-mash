@@ -4,9 +4,7 @@ import {
   CardContent,
   Button,
   Typography,
-  IconButton,
 } from '@mui/material';
-import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
 interface Props {
   id?: number;
@@ -52,6 +50,7 @@ const BasicCard = ({
         <div>
           <Button
             size='small'
+            variant='outlined'
             onClick={() => {
               window.open(object_url);
             }}
@@ -59,7 +58,9 @@ const BasicCard = ({
             Learn More
           </Button>
           <Button
+            sx={{ margin: '0 0.5em', fontWeight: 'bold' }}
             size='small'
+            variant='contained'
             onClick={() => {
               if (id !== undefined) onVoteClick(id);
             }}
@@ -67,9 +68,6 @@ const BasicCard = ({
             Vote
           </Button>
         </div>
-        <IconButton>
-          <FullscreenIcon />
-        </IconButton>
       </CardActions>
     </Card>
   );
