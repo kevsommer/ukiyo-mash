@@ -63,6 +63,18 @@ const AboutPage = () => (
       less accessible. Artworks should be something that one can appreciate
       without having an art degree.
     </Typography>
+    <Typography sx={{ my: '0.5em', textAlign: 'center' }} variant='h4'>
+      Implementation
+    </Typography>
+    <Typography sx={{ my: '1em', fontSize: '18px' }}>
+      Since this is only a small side project, the implementation is very
+      light-weight as well. The frontend uses React and utilises material-ui.
+      While the backend is built using FastAPI, which is Python-based
+      light-weight backend framework. It is heavily inspired by flask, but is
+      more modern and has a great documentation. The database is built using
+      sqllite3 and is handled using the sqlalchemy library. You can view the
+      project code on github and deploy it very quickly yourself using Docker.
+    </Typography>
   </Container>
 );
 
