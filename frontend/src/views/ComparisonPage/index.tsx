@@ -57,7 +57,7 @@ const ComparisonPage = () => {
         });
     } else {
       axios
-        .patch(`${baseURL}/items/vote/${leftArtwork?.id}/${id}`)
+        .patch(`${baseURL}/items/vote/${id}/${leftArtwork?.id}`)
         .then((res) => {
           if (res.status === 200) {
             setLeftArtwork(undefined);
