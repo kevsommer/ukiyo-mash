@@ -25,7 +25,9 @@ const columns: GridColDef[] = [
   },
 ];
 
-const baseURL = 'http://localhost:8000';
+const baseURL = import.meta.env.VITE_BASE_URL
+
+console.log('import.meta.env.VITE_BASE_URL', import.meta.env.VITE_BASE_URL)
 
 const RankingPage = () => {
   const [rows, setRows] = useState<GridRowsProp>([]);

@@ -12,7 +12,7 @@ const HorizontalContainer = styled(Container)`
   margin-top: 5vh;
 `;
 
-const baseURL = 'http://localhost:8000';
+const baseURL = import.meta.env.VITE_BASE_URL
 
 interface Artwork {
   id: number;
