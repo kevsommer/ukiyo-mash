@@ -43,31 +43,33 @@ const BasicCard = ({
         style={{
           marginTop: 'auto',
           display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
         }}
       >
-        <div>
-          <Button
-            size='small'
-            variant='outlined'
-            onClick={() => {
-              window.open(object_url);
-            }}
-          >
-            Learn More
-          </Button>
-          <Button
-            sx={{ margin: '0 0.5em', fontWeight: 'bold' }}
-            size='small'
-            variant='contained'
-            onClick={() => {
-              if (id !== undefined) onVoteClick(id);
-            }}
-          >
-            Vote
-          </Button>
-        </div>
+        <Button
+          sx={{ fontSize: '14px', padding: '0.5em 2em' }}
+          size='small'
+          variant='outlined'
+          onClick={() => {
+            window.open(object_url);
+          }}
+        >
+          Learn More
+        </Button>
+        <Button
+          sx={{
+            margin: '0 0.5em',
+            fontSize: '14px',
+            padding: '0.5em 2em',
+            fontWeight: 'bold',
+          }}
+          size='small'
+          variant='contained'
+          onClick={() => {
+            if (id !== undefined) onVoteClick(id);
+          }}
+        >
+          Vote
+        </Button>
       </CardActions>
     </Card>
   );
