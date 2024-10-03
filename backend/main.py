@@ -36,24 +36,24 @@ def get_db():
     finally:
         db.close()
 
-@app.get("/items/", response_model=List[schemas.Item])
+@app.get("/api/items/", response_model=List[schemas.Item])
 def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     items = crud.get_items(db, skip=skip)
     return items
 
-@app.get("/items/random", response_model=List[schemas.Item])
+@app.get("/api/items/random", response_model=List[schemas.Item])
 def random_items(db: Session = Depends(get_db)):
     items = crud.get_random_items(db)
     return items
 
-@app.get("/items/{item_id}", response_model=schemas.Item)
+@app.get("/api/items/{item_id}", response_model=schemas.Item)
 def read_item(item_id: int, db: Session = Depends(get_db)):
     db_item = crud.get_item(db, item_id=item_id)
     if db_item is None:
         raise HTTPException(status_code=404, detail="Item not found")
     return db_item
 
-@app.patch("/items/vote/{winner_id}/{loser_id}")
+@app.patch("/api/items/vote/{winner_id}/{loser_id}")
 async def update_elo(winner_id: int, loser_id: int, db: Session = Depends(get_db)):
     winner_item = crud.get_item(db, item_id=winner_id)
     if winner_item is None:
