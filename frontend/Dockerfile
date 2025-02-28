@@ -1,15 +1,19 @@
-FROM node:alpine
+FROM oven/bun:latest
 
-COPY package*.json ./
+WORKDIR ./
 
-RUN yarn install
+COPY package.json ./
+COPY bun.lockb ./
+COPY src  ./
+
+RUN bun install
 
 COPY . .
 
-RUN yarn run build
+RUN bun run build
 
-RUN yarn global add serve
+RUN bun add -g serve
 
 EXPOSE 3000
 
-CMD ["serve", "-s", "build", "-l", "3000"]
+CMD ["serve", "-s", "dist", "-l", "3000"]
