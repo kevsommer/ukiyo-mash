@@ -1,17 +1,15 @@
 FROM node:alpine
 
-# set working directory
-WORKDIR /app
+COPY package*.json ./
 
-# copy package.json and yarn.lock
-COPY package.json /app/package.json
-COPY yarn.lock /app/yarn.lock
+RUN yarn install
 
-# add the container's node_modules folder to docker's $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+COPY . .
 
-# install and cache dependencies
-RUN yarn
+RUN yarn run build
 
-# start the container
-CMD ["yarn", "start"]
+RUN yarn global add serve
+
+EXPOSE 3000
+
+CMD ["serve", "-s", "build", "-l", "3000"]
