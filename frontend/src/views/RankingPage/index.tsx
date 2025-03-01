@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DataGrid, type GridRowsProp, type GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
 import { AvatarImage } from '../../components/layout/ContainedImage';
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ const columns: GridColDef[] = [
   { field: 'title', headerName: 'Title', flex: 3, minWidth: 150 },
   { field: 'elo', headerName: 'ELO', flex: 0.5, minWidth: 50 },
   {
-    field: 'object_image_small',
+    field: 'oject_image_small',
     headerName: 'Image',
     flex: 1,
     minWidth: 150,
