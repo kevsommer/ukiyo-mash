@@ -1,0 +1,15 @@
+services:
+  ukiyo-frontend:
+    container_name: ukiyo-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  ukiyo-backend:
+    container_name: ukiyo-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
