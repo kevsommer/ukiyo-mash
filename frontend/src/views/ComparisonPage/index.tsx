@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from '@emotion/styled';
-import { Container, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import BasicCard from '../../components/layout/BasicCard';
+import Container from '../../components/Container';
 import ContainedImage from '../../components/layout/ContainedImage';
 
 const HorizontalContainer = styled(Container)`

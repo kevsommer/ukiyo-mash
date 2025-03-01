@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
-import axios from 'axios';
 import { AvatarImage } from '../../components/layout/ContainedImage';
+import axios from 'axios';
 
 const columns: GridColDef[] = [
   { field: 'rank', headerName: 'Rank', flex: 0.5, minWidth: 50 },
