@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from '@emotion/styled';
-import { Paper } from '@mui/material';
 import BasicCard from '../../components/layout/BasicCard';
 import Container from '../../components/Container';
 import ContainedImage from '../../components/layout/ContainedImage';
@@ -11,6 +10,15 @@ const HorizontalContainer = styled(Container)`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 5vh;
+`;
+
+const Paper = styled('div')`
+  border-radius: 0.25rem;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
+              0px 1px 1px 0px rgba(0,0,0,0.14),
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+  width: 45%;
+  height: 50vh;
 `;
 
 const baseURL = import.meta.env.VITE_BASE_URL
@@ -53,7 +61,6 @@ const ComparisonPage = () => {
             setLeftArtwork(undefined);
             setRightArtwork(undefined);
             setReload(true);
-            console.log(res.data);
           }
         });
     } else {
@@ -64,19 +71,18 @@ const ComparisonPage = () => {
             setLeftArtwork(undefined);
             setRightArtwork(undefined);
             setReload(true);
-            console.log(res.data);
           }
         });
     }
   };
 
   return (
-    <HorizontalContainer maxWidth='lg'>
-      <Paper elevation={3} style={{ width: '45%', height: '50vh' }}>
+    <HorizontalContainer>
+      <Paper>
         <ContainedImage src={leftArtwork?.object_img_small} alt='...' />
         <BasicCard {...leftArtwork} onVoteClick={voteArtwork} />
       </Paper>
-      <Paper elevation={3} style={{ width: '45%', height: '50vh' }}>
+      <Paper>
         <ContainedImage src={rightArtwork?.object_img_small} alt='Loading...' />
         <BasicCard {...rightArtwork} onVoteClick={voteArtwork} />
       </Paper>

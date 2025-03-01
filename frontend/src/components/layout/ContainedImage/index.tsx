@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Button } from '@mui/material';
 
 const ContainedImage = styled('img')`
   height: 50vh;
@@ -13,6 +12,7 @@ const ContainedAvatarImage = styled('img')`
   height: 10vh;
   width: 100%;
   object-fit: scale-down;
+  cursor: pointer;
 `;
 
 interface AvatarImageProps {
@@ -22,15 +22,7 @@ interface AvatarImageProps {
 }
 
 export const AvatarImage = ({ src, alt, onClick }: AvatarImageProps) => (
-  <Button
-    sx={{
-      display: 'flex',
-      margin: '0 auto',
-    }}
-    onClick={onClick}
-  >
-    <ContainedAvatarImage src={src} alt={alt} />
-  </Button>
+  <ContainedAvatarImage src={src} alt={alt} onClick={onClick} />
 );
 
 export default ContainedImage;
