@@ -36,7 +36,7 @@ const AboutPage = () => (
       src='https://wikimedia.org/api/rest_v1/media/math/render/svg/7c80282e9c95e92d6b210467aab48a8c4c81ef10'
       alt='Elo Expected Score Formula'
     />
-    <Paragraph color='secondary' sx={{ my: '1em', fontSize: '18px' }}>
+    <Paragraph>
       Afterwards the update is computed
     </Paragraph>
     <StyledImage
